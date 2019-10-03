@@ -1,0 +1,38 @@
+h2 {
+    text-align: center;
+    color: rgb(82, 72, 52);
+}
+
+.hero {
+    background-color: rgb(124, 147, 124);
+    width: 300px;
+    padding: 10px;
+    list-style: armenian;
+    margin: 10px;
+
+    &:hover {
+        background-color: rgb(107, 126, 107);
+        border: 1px solid goldenrod;
+        transform: scale(1.2) translate(20px);
+        transition: ease-in;
+    }
+
+    &:active {
+        border: 1px solid saddlebrown;
+        transform: scale(1.3);
+    }
+
+    span {
+      color: goldenrod;
+      margin-right: 5px;
+     
+      &:after{
+          content: '.';
+      }
+    }
+
+    &.selected {
+        background-color: rgb(120, 123, 103);
+    }
+}
+

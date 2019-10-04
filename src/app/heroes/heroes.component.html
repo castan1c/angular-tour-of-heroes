@@ -1,14 +1,27 @@
-<div [ngStyle]="{display: 'flex', justifyContent: 'space-between'}">
     <div [ngStyle]="{width: 'max-content'}">
         <h2>My Heroes:</h2>
         <ul class="heroes">
             <li *ngFor="let hero of heroes" 
-                class="hero" 
-                (click)="onSelect(hero)"
-                [class.selected]="hero === selectedHero">
-                <span class="badge">{{hero.id}}</span> {{hero.name}}
+                >
+                <div routerLink="/detail/{{hero.id}}" class="hero">
+                    <span>{{hero.id}}</span> {{hero.name}}
+                </div>
+                <button
+                    (click)="delete(hero)"
+                >
+                    Delete
+                </button>
             </li>
         </ul>
     </div>
-    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-</div>
+    <div>
+        <label> Hero name:
+            <input #heroName />
+        </label>
+        <button
+            (click)="add(heroName.value); heroName.value=''"
+        >
+            add hero!
+        </button>
+    </div>
+

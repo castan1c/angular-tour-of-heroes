@@ -1,3 +1,7 @@
 <h1>{{title}}</h1>
-<app-heroes></app-heroes>
-<app-messages></app-messages>
+<nav [ngStyle]="{display: 'flex', justifyContent: 'space-evenly'}">
+    <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/dashboard">Dashboard</a>
+</nav>
+<router-outlet></router-outlet>
+<app-messages [ngStyle]="{width: '30%'}"></app-messages>
